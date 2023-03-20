@@ -27,22 +27,28 @@ function price(month, numStays) {
         if (numStays > 14) {
 
             let Sprice = mayStudioPrice * numStays;
-            finalPrice.Studio = (Sprice) - (Sprice * (30 / 100));
+            let StudioPrice = (Sprice) - (Sprice * (30 / 100))
+            finalPrice.Studio = StudioPrice.toFixed(2);
 
             let Aprice = mayApartmentPrice * numStays;
-            finalPrice.Apartment = (Aprice) - (Aprice * (10 / 100));
+            let ApartmentPrice = (Aprice) - (Aprice * (10 / 100));
+            finalPrice.Apartment = Aprice.toFixed(2);
 
             return finalPrice;
         }
         else if (numStays >= 7) {
             let Sprice = mayStudioPrice * numStays;
-            finalPrice.Studio = (Sprice) - ((Sprice) * (5 / 100));
+            let StudioPrice = (Sprice) - ((Sprice) * (5 / 100));
+            finalPrice.Studio = StudioPrice.toFixed(2);
 
-            finalPrice.Apartment = mayApartmentPrice * numStays;
+            let ApartmentPrice = mayApartmentPrice * numStays;
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
         }
         else {
-            finalPrice.Apartment = mayStudioPrice * numStays;
-            finalPrice.Apartment = mayApartmentPrice * numStays;
+            let StudioPrice = mayStudioPrice * numStays;
+            finalPrice.Studio = StudioPrice.toFixed(2);
+            let ApartmentPrice = mayApartmentPrice * numStays;
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
         }
         return finalPrice;
     }
@@ -57,15 +63,19 @@ function price(month, numStays) {
         if (numStays > 14) {
 
             let Sprice = juneStudioPrice * numStays;
-            finalPrice.Studio = (Sprice) - ((Sprice) * (20 / 100));
+            let StudioPrice = (Sprice) - ((Sprice) * (20 / 100));
+            finalPrice.Studio = StudioPrice.toFixed(2);
 
             let Aprice = juneApartmentPrice * numStays;
-            finalPrice.Apartment = (Aprice) - ((Aprice) * (10 / 100));
+            let ApartmentPrice = (Aprice) - ((Aprice) * (10 / 100));
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
 
         }
         else {
-            finalPrice.Studio = juneStudioPrice * numStays;
-            finalPrice.Apartment = juneApartmentPrice * numStays;
+            let StudioPrice = juneStudioPrice * numStays;
+            finalPrice.Studio = StudioPrice.toFixed(2);
+            let ApartmentPrice = juneApartmentPrice * numStays;
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
         }
         return finalPrice;
     }
@@ -76,15 +86,17 @@ function price(month, numStays) {
          * numbers of days.
          */
     else if (month == 'July' || month == 'August') {
-
-        finalPrice.Studio = julyStudioPrice * numStays;
+        let StudioPrice = julyStudioPrice * numStays;
+        finalPrice.Studio = StudioPrice.toFixed(2);
 
         if (numStays >= 14) {
             let Aprice = julyApartmentPrice * numStays;
-            finalPrice.Apartment = (Aprice) - ((Aprice) * (10 / 100));
+            let ApartmentPrice = (Aprice) - ((Aprice) * (10 / 100));
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
         }
         else {
-            finalPrice.Apartment = julyApartmentPrice * numStays;
+            let ApartmentPrice = julyApartmentPrice * numStays;
+            finalPrice.Apartment = ApartmentPrice.toFixed(2);
         }
         return finalPrice;
 
